@@ -1,13 +1,13 @@
 html,
 body {
-	height: 100%;
+	height: 100%;	
 }
 
-body {
+body,
+ul {
 	margin: 0;
 	padding: 0;
 }
-
 
 .menu-overlay {
 	position: fixed;
@@ -32,8 +32,156 @@ body {
 	position: fixed;
 	top: 0;
 	right: 0;
-	background-color: orange;
-	width: 30px;
-	height: 30px;
-	z-index: 1;
+	background-color: #0f0820;
+	width: 55px;
+	height: 45px;
+	z-index: 1;	
+	outline: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	transition-property: opacity, top, right;
+	transition-duration: 250ms, 350ms, 350ms;
+	transition-timing-function: ease;
+}
+
+.menu-button:hover {
+	opacity: 0.7;
+}
+
+.menu-button.active {
+	background-color: transparent;
+}
+.menu-button.active .menu-button-item {
+	background-color: #FFF;
+}
+.menu-button.active .menu-button-item.top {
+	transform: translateY(7px) translateX(0) rotate(45deg);
+}
+.menu-button.active .menu-button-item.middle {
+	opacity: 0;
+}
+.menu-button.active .menu-button-item.bottom {
+	transform: translateY(-7px) translateX(0) rotate(-45deg);
+}
+
+.menu-button-content {
+	position: relative;
+	height: 100%;
+}
+
+.menu-button-item {
+	position: relative;
+	height: 2px;
+	background-color: #FFF;
+	width: 25px;
+	left: 15px;
+	border-radius: 1px;
+	transition-property: all;
+	transition-duration: 350ms;
+	transition-timing-function: ease;
+}
+
+.menu-button-item.top {
+	top: 15px;
+}
+
+.menu-button-item.middle {
+	top: 20px;
+}
+
+.menu-button-item.bottom {
+	top: 25px;	
+}
+
+.menu,
+.menu-items {
+	height: 100%;
+}
+.menu-items {
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.menu-item {
+	position: relative;
+	opacity: 0;
+}
+
+.menu-overlay.active .menu-item {
+	animation-name: fadeInRight;
+	animation-duration: 500ms;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+}
+.menu-item:nth-child(1) {
+	animation-delay: 350ms;
+}
+.menu-item:nth-child(2) {
+	animation-delay: 400ms;
+}
+.menu-item:nth-child(3) {
+	animation-delay: 450ms;
+}
+.menu-item:nth-child(4) {
+	animation-delay: 500ms;
+}
+.menu-item:nth-child(5) {
+	animation-delay: 550ms;
+}
+
+.menu-item-content {
+	color: #FFF;
+	text-decoration: none;
+	font-family: 'Bitter', serif;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+.sr-only {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+@media (min-width: 992px) {
+	.menu-button {
+		top: 40px;
+		right: 40px;
+		background-color: transparent;
+		width: 25px;
+		height: 17px;
+	}
+	
+	.menu-button-item {
+		background-color: #cf2949;
+		left: 0;		
+	}
+	
+	.menu-button-item.top {
+		top: 0;
+	}
+
+	.menu-button-item.middle {
+		top: 5px;
+	}
+
+	.menu-button-item.bottom {
+		top: 10px;	
+	}	
 }
