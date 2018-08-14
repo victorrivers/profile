@@ -9,6 +9,10 @@ ul {
 	padding: 0;
 }
 
+.header .name {
+	font-family: 'Eczar', serif;
+}
+
 .menu-overlay {
 	position: fixed;
 	top: 0;
