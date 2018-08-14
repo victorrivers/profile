@@ -18,7 +18,7 @@ ul {
 	top: 0;
 	left: 0;
 	right: 0;
-	background: #cf2949;
+	background: rgba(207, 41, 73, 0.9);
 	opacity: 0;
 	height: 0;
 	visibility: hidden;
@@ -27,7 +27,7 @@ ul {
 }
 
 .menu-overlay.active {
-	opacity: 0.9;
+	opacity: 1;
 	height: 100%;
 	visibility: visible;
 }
@@ -103,16 +103,17 @@ ul {
 	height: 100%;
 }
 .menu-items {
-	list-style-type: none;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
+	list-style-type: none;
 }
 
 .menu-item {
 	position: relative;
 	opacity: 0;
+	text-align: center;
+	height: 15%;
 }
 
 .menu-overlay.active .menu-item {
@@ -121,19 +122,19 @@ ul {
 	animation-timing-function: ease;
 	animation-fill-mode: forwards;
 }
-.menu-item:nth-child(1) {
+.menu-overlay.active .menu-item:nth-child(1) {
 	animation-delay: 350ms;
 }
-.menu-item:nth-child(2) {
+.menu-overlay.active .menu-item:nth-child(2) {
 	animation-delay: 400ms;
 }
-.menu-item:nth-child(3) {
+.menu-overlay.active .menu-item:nth-child(3) {
 	animation-delay: 450ms;
 }
-.menu-item:nth-child(4) {
+.menu-overlay.active .menu-item:nth-child(4) {
 	animation-delay: 500ms;
 }
-.menu-item:nth-child(5) {
+.menu-overlay.active .menu-item:nth-child(5) {
 	animation-delay: 550ms;
 }
 
@@ -141,6 +142,7 @@ ul {
 	color: #FFF;
 	text-decoration: none;
 	font-family: 'Bitter', serif;
+	font-size: 30px;
 }
 
 @keyframes fadeInRight {
